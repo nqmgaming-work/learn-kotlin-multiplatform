@@ -2,9 +2,10 @@ package com.nqmgaming.learnkmp
 
 import android.content.res.Resources
 import android.os.Build
+import android.util.Log
 import kotlin.math.round
 
-actual class Platform(){
+actual class Platform() {
     actual val osName: String
         get() = "Android"
     actual val osVersion: String
@@ -15,9 +16,9 @@ actual class Platform(){
         get() = round(Resources.getSystem().displayMetrics.density).toInt()
 
     actual fun logSystemInfo() {
-        println("OS: $osName $osVersion")
-        println("Device: $deviceModel")
-        println("Density: $density")
+        Log.d("Platform", "OS: $osName $osVersion")
+        Log.d("Platform", "Device: $deviceModel")
+        Log.d("Platform", "Density: $density")
     }
 
 }
